@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Folkets bio</title>
+    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css">
+    <script>
+      window.onscroll = function() {
+        var nav = document.getElementById('nav');
+        var logo = document.getElementById('logo');
+        if ( window.pageYOffset > 100 ) {
+            nav.classList.remove("bg-gradient-to-b");
+            nav.classList.add("bg-dark");
+            logo.classList.remove("h-22");
+            logo.classList.add("h-12");
+        } else {
+            nav.classList.add("bg-gradient-to-b");
+            nav.classList.remove("bg-dark");
+            logo.classList.remove("h-12");
+            logo.classList.add("h-22");
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-dark text-white">
+    <div>
+      <div id="nav" class="fixed w-full from-dark bg-gradient-to-b z-50">
+        <nav class="container mx-auto my-3 flex flex-row items-center justify-between">
+          <img id="logo" class="h-22 " src="https://www.folketsbio.se/wp-content/themes/folketsbio-theme/images/logo.png">
+          <ul class="font-medium flex flex-row -mx-5">
+            <li class="mx-5"><a href="index.html">Förstasidan</a></li>
+            <li class="mx-5"><a href="filmer.html">Filmer</a></li>
+            <li class="mx-5"><a href="biografer.html">Biografer</a></li>
+            <li class="mx-5"><a href="folketsbio.html">Om oss</a></li>
+            <li class="mx-5">Press</li>
+            <li class="mx-5 border-b-2 border-red">Medlem</li>
+            <li class="mx-5">Kontakt</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="h-64"></div>
+
+    <div class="container mx-auto text-center max-w-4xl">
+        <h1 class="text-5xl font-extrabold mb-16">
+          <span class="border-red border-b-4 py-1">
+            <i class="fas fa-users mr-5"></i>Bli medlem
+          </span>
+        </h1>
+        <div class="my-12 text-2xl px-12">
+          <p>Gillar du film från hela världen, dokumentärer, bra barnfilmer, kortfilmer, filmer bortom mittfåran? Var med och bredda filmutbudet där du bor, se ny spännande film och träffa andra filmintresserade människor, genom att gå med i Folkets Bio.</p>
+        </div>
+        <div class="text-xl text-left px-36 leading-relaxed font-serif">
+          <p>Du kan vara med och stödja vårt arbete på många olika sätt. Kanske är du sugen på att engagera dig i biografens publikarbete eller nyfiken på hur det funkar i maskinrummet. Många filmarbetare har börjat sin yrkesbana som biljettrivare hos Folkets Bio. Kom med, det är roligt och du lär dig massor om film!</p>
+          <p>Riksföreningen Folkets Bio är en partipolitiskt obunden kulturförening (läs mer <a href="" class="underline hover:no-underline">om oss här</a>).</p>
+          <p>Genom att bli medlem i en lokalavdelning blir du automatiskt ansluten till riksföreningen. De olika lokalavdelningarna har olika regler för medlemskap, besök din lokalavdelnings webbplats eller kontakta dem för att få reda på vad som gäller där.</p>
+          <hr class="w-20 border-b-4 my-12">
+          <ol class="list-decimal list-inside font-sans font-bold text-lg my-12">
+            <li class="my-6">När du bestämt dig för att bli medlem, välj din avdelning i rullistan här nedanför och följ instruktionerna för att betala medlemsavgiften.</li>
+            <li class="my-6">När du betalat kommer du in på din medlemssida och kan redigera dina uppgifter.</li>
+          </ol>
+          <hr class="w-20 border-b-4 my-12">
+          <p>Du som redan är medlem kan förnya ditt medlemskap eller uppdatera dina kontaktuppgifter här på webben. <a href="" class="underline hover:no-underline">Logga in här</a>.</p>
+          <div class="my-24 bg-dark-semi text-white container mx-auto max-w-4xl p-6 rounded-lg">
+            <h2 class="font-sans text-2xl font-extrabold">Bli medlem</h2>
+            <select class="my-6 px-4 py-3 rounded-lg font-sans text-base bg-dark w-full shadow-lg">
+              <option>Välj lokalavdelning</option>
+              <option>Stockholm</option>
+            </select>
+            <button class="px-4 py-3 mb-3 rounded-lg text-base cursor-pointer font-sans bg-dark shadow-lg">Köp medlemskap <span class="font-mono ml-3">(200kr)</span></button>
+          </div>
+        </div>
+    </div>
+
+    <div class="h-36"></div>
+
+    <div class="container mx-auto max-w-7xl mt-24">
+      <div class="flex flex-row justify-between items-start">
+        <div class="w-3/12 px-12 self-center">
+          <h1 class="text-2xl font-extrabold">
+            <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Kommande filmer</span>
+          </h1>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/376068/08b22776067656a7a5864144c4ef7355-inland.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Inland</h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Drama</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://www.folketsbio.se/wp-content/uploads/2021/02/quo-vadis-aida-a4-scaled.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Quo Vadis, Aida?</h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Drama</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://svenblume.se/wp-content/uploads/2021/02/Poster-Det-krokiga-Komp-2021_02_25-738x1024.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Det krokiga och det raka </h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Dokumentär</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-36"></div>
+
+    <div class="container mx-auto max-w-7xl px-12">
+
+      <h1 class="text-2xl font-extrabold my-24 text-center">
+        <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Våra nyheter</span>
+      </h1>
+
+      <div class="grid grid-cols-2 gap-24">
+        <div class="mb-12">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2019/01/jag-skiner-inte-2_300ppi-640x360.jpg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Anmäl din kortfilm till Kortfilm c/o Folkets Bio</h1>
+            <p>Varje år premiärsätter Kortfilm c/o Folkets Bio 15-20 noggrant utvalda kortfilmer på bio och...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-12 mt-64">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2021/03/stefan-jarl-13-13-1024x717-1-640x360.jpeg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Stefan Jarl fyller 80 – aktuell med ny film</h1>
+            <p>Stefan Jarl har varit verksam under över 50 år och gjort närmare 50 filmer...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-12 -mt-64">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2021/03/buff-640x360.jpeg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Folkets Bios filmer på BUFF</h1>
+            <p>Folkers Bios prisbelönade Tottori! Sommaren vi blev superhjältar inviger BUFF Filmfestival – den årligt...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="h-48"></div>
+
+  </body>
+</html>

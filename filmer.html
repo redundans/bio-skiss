@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Folkets bio</title>
+    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css">
+    <script>
+      window.onscroll = function() {
+        var nav = document.getElementById('nav');
+        var logo = document.getElementById('logo');
+        if ( window.pageYOffset > 100 ) {
+            nav.classList.remove("bg-gradient-to-b");
+            nav.classList.add("bg-dark");
+            logo.classList.remove("h-22");
+            logo.classList.add("h-12");
+        } else {
+            nav.classList.add("bg-gradient-to-b");
+            nav.classList.remove("bg-dark");
+            logo.classList.remove("h-12");
+            logo.classList.add("h-22");
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-dark text-white">
+    <div>
+      <div id="nav" class="fixed w-full from-dark bg-gradient-to-b z-50">
+        <nav class="container mx-auto my-3 flex flex-row items-center justify-between">
+          <img id="logo" class="h-22" src="https://www.folketsbio.se/wp-content/themes/folketsbio-theme/images/logo.png">
+          <ul class="font-medium flex flex-row -mx-5">
+            <li class="mx-5"><a href="index.html">Förstasidan</a></li>
+            <li class="mx-5 border-b-2 border-red">Filmer</li>
+            <li class="mx-5">Biografer</li>
+            <li class="mx-5"><a href="folketsbio.html">Om oss</a></li>
+            <li class="mx-5">Press</li>
+            <li class="mx-5"><a href="medlem.html">Medlem</a></li>
+            <li class="mx-5">Kontakt</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="h-64"></div>
+
+    <div class="container mx-auto text-center max-w-4xl">
+        <h1 class="text-5xl font-extrabold mb-16">
+          <span class="border-red border-b-4 py-1">
+            <i class="fas fa-search mr-5"></i>Hitta bland våra filmer
+          </span>
+        </h1>
+        <div class="my-12 text-2xl px-12">
+          <p>Vi distribuerar och visar film från hela världen, för alla åldrar. Filmer som roar och oroar, engagerar, skapar debatt och ger nya perspektiv. Kvalitet, engagemang och en bred representation i filmutbud och verksamhet genomsyrar allt vi gör.</p>
+        </div>
+    </div>
+
+    <div class="h-12"></div>
+
+    <div class="px-6">
+
+      <div class="bg-dark-semi text-white container mx-auto max-w-4xl p-6 rounded-lg">
+
+        <div class="">
+          <input type="text" class="text-white bg-dark text-xl font-bold rounded focus:border-red-600 w-full p-3 px-6 shadow-inner placeholder-dark-midi" placeholder="Sök titel / genre / land / namn" name="">
+        </div>
+
+        <div class="h-12"></div>
+
+        <div class="container mx-auto max-w-4xl">
+          <nav class="tabs flex flex-col sm:flex-row">
+            <button data-target="panel-1" class="-mb-1 border-b-4 border-red-600 py-3 px-6 block focus:outline-none text-whitewhite font-medium">
+              Aktuella filmer
+            </button>
+            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
+              Alla
+            </button>
+            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
+              På bio
+            </button>
+            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
+              Stream
+            </button>
+            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
+              DVD
+            </button>
+            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
+              Kommande
+            </button>
+          </nav>
+        </div>
+
+        <div class="h-6"></div>
+
+        <div class="container mx-auto max-w-4xl">
+          <ul>
+            <li class="border-b-2 border-gray-900 py-9">
+              <div class="-mx-6 flex justify-center items-center">
+                <figure class="mx-6">
+                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                </figure>
+                <div class="flex-1 mx-6">
+                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
+                  <div class="-mx-3 my-2">
+                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
+                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
+                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
+                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+                  </div>
+                </div>
+                  </div>
+            </li>
+            <li class="border-b-2 border-gray-900 py-9">
+              <div class="-mx-6 flex justify-center items-center">
+                <figure class="mx-6">
+                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                </figure>
+                <div class="flex-1 mx-6">
+                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
+                  <div class="-mx-3 my-2">
+                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
+                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
+                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
+                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+                  </div>
+                </div>
+                  </div>
+            </li>
+            <li class="border-b-2 border-gray-900 py-9">
+              <div class="-mx-6 flex justify-center items-center">
+                <figure class="mx-6">
+                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                </figure>
+                <div class="flex-1 mx-6">
+                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
+                  <div class="-mx-3 my-2">
+                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
+                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
+                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
+                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+                  </div>
+                </div>
+                  </div>
+            </li>
+          </ul>
+
+
+          <div class="text-center font-extrabold uppercase my-12">
+            <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Visa fler</span>
+          </div>
+
+        </div>
+      </div> 
+    </div>
+
+    <div class="h-48"></div>
+
+    <div class="container mx-auto max-w-7xl mt-24">
+      <div class="flex flex-row justify-between items-start">
+        <div class="w-3/12 px-12 self-center">
+          <h1 class="text-2xl font-extrabold">
+            <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Kommande filmer</span>
+          </h1>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/376068/08b22776067656a7a5864144c4ef7355-inland.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Inland</h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Drama</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://www.folketsbio.se/wp-content/uploads/2021/02/quo-vadis-aida-a4-scaled.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Quo Vadis, Aida?</h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Drama</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/12 px-12">
+          <img class="my-3" src="https://svenblume.se/wp-content/uploads/2021/02/Poster-Det-krokiga-Komp-2021_02_25-738x1024.jpg">
+          <div>
+            <h2 class="my-1 text-xl font-extrabold uppercase">Det krokiga och det raka </h2>
+            <div class="-mx-3">
+              <span class="font-sans font-extrabold  mx-3"><i class="fas fa-clock mr-2"></i>58 minuter</span>
+              <span class="font-sans font-extrabold  mx-3">Dokumentär</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-36"></div>
+
+    <div class="container mx-auto max-w-7xl px-12">
+
+      <h1 class="text-2xl font-extrabold my-24 text-center">
+        <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Våra nyheter</span>
+      </h1>
+
+      <div class="grid grid-cols-2 gap-24">
+        <div class="mb-12">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2019/01/jag-skiner-inte-2_300ppi-640x360.jpg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Anmäl din kortfilm till Kortfilm c/o Folkets Bio</h1>
+            <p>Varje år premiärsätter Kortfilm c/o Folkets Bio 15-20 noggrant utvalda kortfilmer på bio och...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-12 mt-64">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2021/03/stefan-jarl-13-13-1024x717-1-640x360.jpeg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Stefan Jarl fyller 80 – aktuell med ny film</h1>
+            <p>Stefan Jarl har varit verksam under över 50 år och gjort närmare 50 filmer...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-12 -mt-64">
+          <img src="https://www.folketsbio.se/wp-content/uploads/2021/03/buff-640x360.jpeg">
+          <div class="my-6">
+            <h1 class="text-2xl font-extrabold uppercase my-2">Folkets Bios filmer på BUFF</h1>
+            <p>Folkers Bios prisbelönade Tottori! Sommaren vi blev superhjältar inviger BUFF Filmfestival – den årligt...</p>
+            <div class="font-extrabold uppercase mt-6">
+              <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Läs mer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="h-48"></div>
+
+  </body>
+</html>
