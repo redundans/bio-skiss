@@ -73,13 +73,13 @@
             <img src="https://www.folketsbio.se/wp-content/uploads/2015/09/goteborg-frolunda-kulturhus-1201108286373_n.jpg">
             <div class="p-6 bg-dark-semi rounded-b-lg">
               <h2 class="font-display font-bold text-xl uppercase">Frölundabion</h2>
-              <ul class="mt-3">
+              <ul class="mt-3 leading-relaxed">
                 <li>Frölunda Kulturhus</li>
                 <li>Box 63</li>
                 <li>421 21 Västra Frölunda</li>
                 <li>Telefon reception: 031-366 27 25</li>
-                <li>Webbplats: frolundabion.nu</li>
-                <li>E-post: bionfrolunda@gmail.com</li>
+                <li><a href="" class="underline hover:no-underline">frolundabion.nu</a></li>
+                <li><a href="" class="underline hover:no-underline">bionfrolunda@gmail.com</a></li>
               </ul>
             </div>
           </div>
@@ -88,14 +88,14 @@
             <img src="https://www.folketsbio.se/wp-content/uploads/2015/09/hagabion.jpg">
             <div class="p-6 bg-dark-semi rounded-b-lg">
               <h2 class="font-display font-bold text-xl uppercase">Hagabion</h2>
-              <ul class="mt-3">
+              <ul class="mt-3 leading-relaxed">
                 <li>Folkets Bio Göteborg</li>
                 <li>Box 7176</li>
                 <li>402 33 Göteborg</li>
                 <li>Besöksadress: Linnégatan 21</li>
                 <li>WebbTelefon kassa: 031-42 88 10</li>
-                <li>Webbplats: hagabion.se</li>
-                <li>E-post: info@hagabion.se</li>
+                <li><a href="" class="underline hover:no-underline">hagabion.se</li></li>
+                <li><a href="" class="underline hover:no-underline">info@hagabion.se</a></li>
               </ul>
             </div>
           </div>
@@ -104,12 +104,12 @@
             <img src="https://www.folketsbio.se/wp-content/uploads/2015/09/Afton_edit.png">
             <div class="p-6 bg-dark-semi rounded-b-lg">
               <h2 class="font-display font-bold text-xl uppercase">AFTONSTJÄRNAN</h2>
-              <ul class="mt-3">
+              <ul class="mt-3 leading-relaxed">
                 <li>Plåtslagargatan 2</li>
                 <li>417 57 Göteborg</li>
                 <li>Telefon: 0704-38 86 53</li>
-                <li>Webbplats: bioaftonstjarnan.se</li>
-                <li>E-post: info@bioaftonstjarnan.se</li>
+                <li><a href="" class="underline hover:no-underline">bioaftonstjarnan.se</li></li>
+                <li><a href="" class="underline hover:no-underline">info@bioaftonstjarnan.se</a></li>
               </ul>
             </div>
           </div>
@@ -121,11 +121,11 @@
             <img src="https://www.folketsbio.se/wp-content/uploads/2015/09/Angereds_bio_20150817.jpg">
             <div class="p-6 bg-dark-semi rounded-b-lg">
               <h2 class="font-display font-bold text-xl uppercase">ANGEREDS BIO</h2>
-              <ul class="mt-3">
+              <ul class="mt-3 leading-relaxed">
                 <li>Kulturhuset Blå Stället</li>
                 <li>Angereds Torg 13</li>
                 <li>424 65 Angered</li>
-                <li>Webbplats: angeredsbio.se</li>
+                <li><a href="" class="underline hover:no-underline">www.angeredsbio.se</a></li>
               </ul>
             </div>
           </div>
@@ -134,14 +134,14 @@
             <img src="https://www.folketsbio.se/wp-content/uploads/2015/09/Folkets_bio_Jkpg_by_night.jpg">
             <div class="p-6 bg-dark-semi rounded-b-lg">
               <h2 class="font-display font-bold text-xl uppercase">FOLKETS BIO Jönköping</h2>
-              <ul class="mt-3">
+              <ul class="mt-3 leading-relaxed">
                 <li>Kulturhuset</li>
                 <li>Besöksadress: Svavelsticksgränd 7-9</li>
                 <li>Postadress: Västra Storgatan 18 e</li>
                 <li>553 15 Jönköping</li>
                 <li>Telefon: 036-19 05 69</li>
-                <li>Webbplats: www.folketsbiojonkoping.se</li>
-                <li>E-post: info@folketsbiojonkoping.se</li>
+                <li><a href="" class="underline hover:no-underline">www.folketsbiojonkoping.se</a></li>
+                <li><a href="" class="underline hover:no-underline">info@folketsbiojonkoping.se</a></li>
               </ul>
             </div>
           </div>
@@ -245,8 +245,9 @@
       function initMap() {
   // Styles a map in night mode.
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 40.674, lng: -73.945 },
-    zoom: 12,
+    center: { lat: 59.326242, lng: 17.8390024 },
+    zoom: 6,
+    disableDefaultUI: true,
     styles: [
       {
         "featureType": "all",

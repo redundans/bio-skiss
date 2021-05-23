@@ -26,3 +26,15 @@
 p {
 	@apply my-6;
 }
+
+.view-content {
+    @apply hidden;
+}
+
+.open .view-content {
+    @apply block;
+}
+
+.open .fa-play {
+    @apply transform rotate-90;
+}
