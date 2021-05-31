@@ -31,7 +31,6 @@
         <nav class="container mx-auto my-3 flex flex-row items-center justify-between">
           <img id="logo" class="h-22" src="https://www.folketsbio.se/wp-content/themes/folketsbio-theme/images/logo.png">
           <ul class="font-medium flex flex-row -mx-5">
-            <li class="mx-5"><a href="index.html">Förstasidan</a></li>
             <li class="mx-5 border-b-2 border-red">Filmer</li>
             <li class="mx-5"><a href="biografer.html">Biografer</a></li>
             <li class="mx-5"><a href="folketsbio.html">Om oss</a></li>
@@ -46,115 +45,125 @@
     <div class="h-64"></div>
 
     <div class="container mx-auto text-center max-w-4xl">
-        <h1 class="text-5xl font-extrabold mb-16">
-          <span class="border-red border-b-4 py-1">
-            <i class="fas fa-search mr-5"></i>Hitta bland våra filmer
-          </span>
-        </h1>
-        <div class="my-12 text-2xl px-12">
-          <p>Vi distribuerar och visar film från hela världen, för alla åldrar. Filmer som roar och oroar, engagerar, skapar debatt och ger nya perspektiv. Kvalitet, engagemang och en bred representation i filmutbud och verksamhet genomsyrar allt vi gör.</p>
-        </div>
+      <h1 class="text-5xl font-extrabold mb-16">
+        <span class="border-red border-b-4 py-1">
+          <i class="fas fa-search mr-5"></i>Hitta bland våra filmer
+        </span>
+      </h1>
+      <div class="my-12 text-2xl px-12">
+        <p>Vi distribuerar och visar film från hela världen, för alla åldrar. Filmer som roar och oroar, engagerar, skapar debatt och ger nya perspektiv. Kvalitet, engagemang och en bred representation i filmutbud och verksamhet genomsyrar allt vi gör.</p>
+      </div>
     </div>
 
     <div class="h-12"></div>
 
-    <div class="px-6">
-
+    <div id="app" class="px-6">
       <div class="bg-dark-semi text-white container mx-auto max-w-4xl p-6 rounded-lg">
+        <input type="text" v-model="query" class="text-white bg-dark text-xl font-bold rounded focus:border-red-600 w-full p-3 px-6 shadow-inner placeholder-dark-midi" placeholder="Sök titel / genre / land / namn">
 
-        <div class="">
-          <input type="text" class="text-white bg-dark text-xl font-bold rounded focus:border-red-600 w-full p-3 px-6 shadow-inner placeholder-dark-midi" placeholder="Sök titel / genre / land / namn" name="">
-        </div>
+        <ul class="flex flex-row">
+          <li class="nav-item">
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('alla')" :class="{ 'border-b-4 opacity-100': isActive('alla') }" href="#alla">Alla<span class="font-thin ml-3">{{result.length}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('bio')" :class="{ 'border-b-4 opacity-100': isActive('bio') }" href="#bio">På bio <span class="font-thin ml-3">{{bio.length}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('vod')" :class="{ 'border-b-4 opacity-100': isActive('vod') }" href="#vod">Streama <span class="font-thin ml-3">{{vod.length}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('comming')" :class="{ 'border-b-4 opacity-100': isActive('comming') }" href="#comming">Kommande <span class="font-thin ml-3">{{comming.length}}</span></a>
+          </li>
+        </ul>
 
-        <div class="h-12"></div>
+        <div class="tab-content py-3" id="myTabContent">
 
-        <div class="container mx-auto max-w-4xl">
-          <nav class="tabs flex flex-col sm:flex-row">
-            <button data-target="panel-1" class="-mb-1 border-b-4 border-red-600 py-3 px-6 block focus:outline-none text-whitewhite font-medium">
-              Aktuella filmer
-            </button>
-            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
-              Alla
-            </button>
-            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
-              På bio
-            </button>
-            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
-              Stream
-            </button>
-            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
-              DVD
-            </button>
-            <button data-target="panel-2" class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100">
-              Kommande
-            </button>
-          </nav>
-        </div>
-
-        <div class="h-6"></div>
-
-        <div class="container mx-auto max-w-4xl">
-          <ul>
-            <li class="border-b-2 border-gray-900 py-9">
-              <div class="-mx-6 flex justify-center items-center">
-                <figure class="mx-6">
-                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
-                </figure>
-                <div class="flex-1 mx-6">
-                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
-                  <div class="-mx-3 my-2">
-                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
-                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
-                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
-                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
-                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+          <div class="tab-pane fade" :class="{ 'active hidden': !isActive('alla') }" id="alla">
+            <ul>
+              <li class="border-b-2 border-gray-900 py-9" v-for="film in result">
+                <div class="-mx-6 flex justify-center items-center">
+                  <figure class="mx-6">
+                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                  </figure>
+                  <div class="flex-1 mx-6">
+                    <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
+                    <div class="-mx-3 my-2">
+                      <span class="font-sans font-extrabold mx-3" v-if="film.bio"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                      <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>{{film.length}} minuter</span>
+                      <span class="font-sans font-extrabold mx-3 my-1">{{ film.terms.genre.join(', ') }}</span>
+                      <span class="block font-sans font-extrabold mx-3 my-1">{{film.premiere}}</span>
+                    </div>
                   </div>
                 </div>
-                  </div>
-            </li>
-            <li class="border-b-2 border-gray-900 py-9">
-              <div class="-mx-6 flex justify-center items-center">
-                <figure class="mx-6">
-                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
-                </figure>
-                <div class="flex-1 mx-6">
-                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
-                  <div class="-mx-3 my-2">
-                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
-                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
-                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
-                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
-                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" :class="{ 'active hidden': !isActive('bio') }" id="bio">
+            <ul>
+              <li class="border-b-2 border-gray-900 py-9" v-for="film in bio">
+                <div class="-mx-6 flex justify-center items-center">
+                  <figure class="mx-6">
+                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                  </figure>
+                  <div class="flex-1 mx-6">
+                    <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
+                    <div class="-mx-3 my-2">
+                      <span class="font-sans font-extrabold mx-3" v-if="film.bio"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                      <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>{{film.length}} minuter</span>
+                      <span class="font-sans font-extrabold mx-3 my-1">{{ film.terms.genre.join(', ') }}</span>
+                      <span class="block font-sans font-extrabold mx-3 my-1">{{film.premiere}}</span>
+                    </div>
                   </div>
                 </div>
-                  </div>
-            </li>
-            <li class="border-b-2 border-gray-900 py-9">
-              <div class="-mx-6 flex justify-center items-center">
-                <figure class="mx-6">
-                  <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
-                </figure>
-                <div class="flex-1 mx-6">
-                  <h2 class="font-extrabold text-4xl uppercase">Arica</h2>
-                  <div class="-mx-3 my-2">
-                    <span class="font-sans font-extrabold mx-3"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
-                    <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>97 minuter</span>
-                    <span class="font-sans font-extrabold mx-3 my-1">Dokumentär</span>
-                          <span class="font-sans font-extrabold mx-3 my-1">Barntillåten</span>
-                          <span class="block font-sans font-extrabold mx-3 my-1">Premiär 2021-04-29</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" :class="{ 'active hidden': !isActive('vod') }" id="vod">
+            <ul>
+              <li class="border-b-2 border-gray-900 py-9" v-for="film in vod">
+                <div class="-mx-6 flex justify-center items-center">
+                  <figure class="mx-6">
+                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                  </figure>
+                  <div class="flex-1 mx-6">
+                    <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
+                    <div class="-mx-3 my-2">
+                      <span class="font-sans font-extrabold mx-3" v-if="film.bio"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                      <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>{{film.length}} minuter</span>
+                      <span class="font-sans font-extrabold mx-3 my-1">{{ film.terms.genre.join(', ') }}</span>
+                      <span class="block font-sans font-extrabold mx-3 my-1">{{film.premiere}}</span>
+                    </div>
                   </div>
                 </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" :class="{ 'active hidden': !isActive('comming') }" id="comming">
+            <ul>
+              <li class="border-b-2 border-gray-900 py-9" v-for="film in comming">
+                <div class="-mx-6 flex justify-center items-center">
+                  <figure class="mx-6">
+                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                  </figure>
+                  <div class="flex-1 mx-6">
+                    <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
+                    <div class="-mx-3 my-2">
+                      <span class="font-sans font-extrabold mx-3" v-if="film.bio"><i class="fas fa-ticket-alt mr-2 transform -rotate-3"></i>På bio</span>
+                      <span class="font-sans font-extrabold mx-3 my-"><i class="fas fa-clock mr-2"></i>{{film.length}} minuter</span>
+                      <span class="font-sans font-extrabold mx-3 my-1">{{ film.terms.genre.join(', ') }}</span>
+                      <span class="block font-sans font-extrabold mx-3 my-1">{{film.premiere}}</span>
+                    </div>
                   </div>
-            </li>
-          </ul>
-
-
-          <div class="text-center font-extrabold uppercase my-12">
-            <span class="border-red border-b-4 py-1 hover:border-transparent cursor-pointer">Visa fler</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
         </div>
-      </div> 
+      </div>
     </div>
 
     <div class="h-48"></div>
@@ -246,5 +255,86 @@
 
     <div class="h-48"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script type="text/javascript">
+      var timeout;
+      var app = new Vue({
+        el: '#app',
+        data: {
+          query: null,
+          result: [],
+          activeItem: 'alla'
+        },
+        mounted: function () {
+          this.query = '';
+        },
+        watch: {
+          query: function( newVal, oldVal ) {
+            if(timeout) {
+              clearTimeout(timeout);
+              timeout = null;
+            }
+            timeout = setTimeout(this.doSearch, 250)
+          }
+        },
+        computed: {
+          bio: function() {
+            let bio = this.result.filter((item)=>{
+              return item.bio===true;
+            });
+            return bio;
+          },
+          vod: function() {
+            let vod = this.result.filter((item)=>{
+              return item.vod===true;
+            });
+            return vod;
+          },
+          dvd: function() {
+            let dvd = this.result.filter((item)=>{
+              return item.dvd===true;
+            });
+            return dvd;
+          },
+          comming: function() {
+            const now = moment();
+            let comming = this.result.filter((item)=>{
+              return moment().isBefore(item.premiere);
+            });
+            return comming;
+          }
+        },
+        methods: {
+          doSearch: function(){
+            let vm = this;
+            fetch('https://www.folketsbio.se/wp-json/wp/v2/film?&filter[s]=' + this.query)
+            .then(
+              function(response) {
+                if (response.status !== 200) {
+                  console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                  return;
+                }
+                // Examine the text in the response
+                response.json().then(function(data) {
+                  vm.result = data;
+                });
+              }
+            )
+            .catch(function(err) {
+              console.log('Fetch Error :-S', err);
+            });
+          },
+          isActive (menuItem) {
+            return this.activeItem === menuItem
+          },
+          setActive (menuItem) {
+            this.activeItem = menuItem
+          }
+        }
+      })
+    </script>
   </body>
 </html>
