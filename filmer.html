@@ -29,7 +29,7 @@
     <div>
       <div id="nav" class="fixed w-full from-dark bg-gradient-to-b z-50">
         <nav class="container mx-auto my-3 flex flex-row items-center justify-between">
-          <img id="logo" class="h-22" src="https://www.folketsbio.se/wp-content/themes/folketsbio-theme/images/logo.png">
+          <a href="/"><img id="logo" class="h-22" src="https://www.folketsbio.se/wp-content/themes/folketsbio-theme/images/logo.png"></a>
           <ul class="font-medium flex flex-row -mx-5">
             <li class="mx-5 border-b-2 border-red">Filmer</li>
             <li class="mx-5"><a href="biografer.html">Biografer</a></li>
@@ -61,18 +61,18 @@
       <div class="bg-dark-semi text-white container mx-auto max-w-4xl p-6 rounded-lg">
         <input type="text" v-model="query" class="text-white bg-dark text-xl font-bold rounded focus:border-red-600 w-full p-3 px-6 shadow-inner placeholder-dark-midi" placeholder="Sök titel / genre / land / namn">
 
-        <ul class="flex flex-row">
+        <ul class="flex flex-row my-6">
           <li class="nav-item">
-            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('alla')" :class="{ 'border-b-4 opacity-100': isActive('alla') }" href="#alla">Alla<span class="font-thin ml-3">{{result.length}}</span></a>
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('alla')" :class="{ 'border-b-4 opacity-100': isActive('alla') }" href="#alla">Alla filmer<span class="ml-3 text-sm bg-white text-dark rounded-xl p-1 px-2">{{result.length}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('bio')" :class="{ 'border-b-4 opacity-100': isActive('bio') }" href="#bio">På bio <span class="font-thin ml-3">{{bio.length}}</span></a>
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('bio')" :class="{ 'border-b-4 opacity-100': isActive('bio') }" href="#bio">På bio<span class="ml-3 text-sm bg-white text-dark rounded-xl p-1 px-2">{{bio.length}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('vod')" :class="{ 'border-b-4 opacity-100': isActive('vod') }" href="#vod">Streama <span class="font-thin ml-3">{{vod.length}}</span></a>
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('vod')" :class="{ 'border-b-4 opacity-100': isActive('vod') }" href="#vod">Streama<span class="ml-3 text-sm bg-white text-dark rounded-xl p-1 px-2">{{vod.length}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('comming')" :class="{ 'border-b-4 opacity-100': isActive('comming') }" href="#comming">Kommande <span class="font-thin ml-3">{{comming.length}}</span></a>
+            <a class="-mb-1 tab opacity-25 py-3 px-6 font-medium block focus:outline-none hover:opacity-100" @click.prevent="setActive('comming')" :class="{ 'border-b-4 opacity-100': isActive('comming') }" href="#comming">Kommande<span class="ml-3 text-sm bg-white text-dark rounded-xl p-1 px-2">{{comming.length}}</span></a>
           </li>
         </ul>
 
@@ -83,7 +83,7 @@
               <li class="border-b-2 border-gray-900 py-9" v-for="film in result">
                 <div class="-mx-6 flex justify-center items-center">
                   <figure class="mx-6">
-                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                    <img class="h-64" src="https://i.pinimg.com/originals/72/1d/f4/721df4f40698ef92549918b99369f6c6.jpg">
                   </figure>
                   <div class="flex-1 mx-6">
                     <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
@@ -97,6 +97,9 @@
                 </div>
               </li>
             </ul>
+            <div v-if="result.length===0" class="text-center py-12 text-xl font-extrabold">
+              Hittade inga filmer
+            </div>
           </div>
 
           <div class="tab-pane fade" :class="{ 'active hidden': !isActive('bio') }" id="bio">
@@ -104,7 +107,7 @@
               <li class="border-b-2 border-gray-900 py-9" v-for="film in bio">
                 <div class="-mx-6 flex justify-center items-center">
                   <figure class="mx-6">
-                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                    <img class="h-64" src="https://i.pinimg.com/originals/72/1d/f4/721df4f40698ef92549918b99369f6c6.jpg">
                   </figure>
                   <div class="flex-1 mx-6">
                     <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
@@ -118,6 +121,9 @@
                 </div>
               </li>
             </ul>
+            <div v-if="bio.length===0" class="text-center py-12 text-xl font-extrabold">
+              Hittade inga filmer
+            </div>
           </div>
 
           <div class="tab-pane fade" :class="{ 'active hidden': !isActive('vod') }" id="vod">
@@ -125,7 +131,7 @@
               <li class="border-b-2 border-gray-900 py-9" v-for="film in vod">
                 <div class="-mx-6 flex justify-center items-center">
                   <figure class="mx-6">
-                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                    <img class="h-64" src="https://i.pinimg.com/originals/72/1d/f4/721df4f40698ef92549918b99369f6c6.jpg">
                   </figure>
                   <div class="flex-1 mx-6">
                     <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
@@ -139,6 +145,9 @@
                 </div>
               </li>
             </ul>
+            <div v-if="vod.length===0" class="text-center py-12 text-xl font-extrabold">
+              Hittade inga filmer
+            </div>
           </div>
 
           <div class="tab-pane fade" :class="{ 'active hidden': !isActive('comming') }" id="comming">
@@ -146,7 +155,7 @@
               <li class="border-b-2 border-gray-900 py-9" v-for="film in comming">
                 <div class="-mx-6 flex justify-center items-center">
                   <figure class="mx-6">
-                    <img class="h-64" src="https://catalog.cinema-api.com/cf/images/ncg-images/b52808c41fc6428786724bcc621e0e22.jpg?width=240&version=294AC3D437083CDC0697E9E28C415B93&format=webp">
+                    <img class="h-64" src="https://i.pinimg.com/originals/72/1d/f4/721df4f40698ef92549918b99369f6c6.jpg">
                   </figure>
                   <div class="flex-1 mx-6">
                     <h2 class="font-extrabold text-4xl uppercase" v-html="film.title.rendered"></h2>
@@ -160,6 +169,9 @@
                 </div>
               </li>
             </ul>
+            <div v-if="comming.length===0" class="text-center py-12 text-xl font-extrabold">
+              Hittade inga filmer
+            </div>
           </div>
 
         </div>
